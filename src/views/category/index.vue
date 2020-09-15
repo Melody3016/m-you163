@@ -1,15 +1,21 @@
 <template>
   <div class="category">
-    <h1>这是category</h1>
+    <cate-header />
+    <cate-nav />
     <footer-nav />
   </div>
 </template>
 
 <script>
 import FooterNav from '@/components/FooterNav'
+import CateHeader from './Header'
+import CateNav from './Nav'
+
 export default {
   components: {
-    FooterNav
+    FooterNav,
+    CateHeader,
+    CateNav
   }
 }
 </script>

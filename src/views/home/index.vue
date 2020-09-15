@@ -26,7 +26,7 @@ export default {
   },
   created () {
     // 请求数据
-    axios.get('/getBanner/xhr/index.json?__timestamp=1599476448219')
+    axios.get('/getData/xhr/index.json?__timestamp=1599476448219')
       .then((res) => {
         this.$store.commit('setIndexData', res.data.data.data)
       })
