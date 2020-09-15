@@ -62,11 +62,11 @@ export default {
 <style lang="less" scoped>
 .container {
   display: flex;
-  overflow: auto;
   .nav-bar {
     width: 1.62rem;
-    height: 1130px;
-    border-right: 1px solid #ccc;
+    position: fixed;
+    left: 0;
+    top: .88rem;
     .cateNavVert {
       padding: .4rem 0;
       position: relative;

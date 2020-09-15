@@ -10,12 +10,21 @@
     </van-swipe>
     <!--二级分类-->
     <div class="secList">
-      <div class="item"
-        v-for="(item, index) in categoryL2List"
-        :key="index"
+      <div class="group"
+        v-for="(groupItem, cIndex) in categoryGroupList"
+        :key="cIndex"
       >
-        <img :src="item.wapBannerUrl" alt="">
-        <div class="txt">{{ item.name }}</div>
+        <div class="title">{{ groupItem.name }}</div>
+        <!--三级分类-->
+        <div class="list">
+          <div class="item"
+          v-for="(item, index) in groupItem.categoryList"
+          :key="index"
+        >
+            <img :src="item.wapBannerUrl" alt="">
+            <div class="txt">{{ item.name }}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -31,14 +40,14 @@ export default {
   data () {
     return {
       bannerList: [],
-      categoryL2List: []
+      categoryGroupList: []
     }
   },
   props: ['list'],
   watch: {
     list (val) {
       this.bannerList = val.currentCategory.bannerList
-      this.categoryL2List = val.categoryL2List
+      this.categoryGroupList = val.categoryGroupList
     }
   }
 }
@@ -48,6 +57,8 @@ export default {
 .content {
   width: 5.48rem;
   padding: .3rem .3rem .2rem;
+  border-left: 1px solid #ccc;
+  margin-left: 1.62rem;
   .my-swipe{
     width: 5.28rem;
     height: 1.92rem;
@@ -60,22 +71,30 @@ export default {
     }
   }
   .secList {
-    display: flex;
-    flex-wrap: wrap;
-    .item {
-      width: 1.44rem;
-      height: 2.16rem;
-      margin-right: .28rem;
-      img {
+    .title {
+      font-size: .28rem;
+      font-weight: bold;
+      border-bottom: 1px solid #eee;
+      line-height: .5rem;
+    }
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      .item {
         width: 1.44rem;
-        height: 1.44rem;
-      }
-      .txt {
-        font-size: .26rem;
-        text-align: center;
-      }
-      &:nth-child(3n){
-        margin-right: 0;
+        height: 2.16rem;
+        margin-right: .27rem;
+        img {
+          width: 1.44rem;
+          height: 1.44rem;
+        }
+        .txt {
+          font-size: .26rem;
+          text-align: center;
+        }
+        &:nth-child(3n){
+          margin-right: 0;
+        }
       }
     }
   }

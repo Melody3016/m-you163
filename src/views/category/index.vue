@@ -21,5 +21,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.category {
+  padding-top: .88rem;
+  padding-bottom: .98rem;
+}
 </style>

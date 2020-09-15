@@ -23,6 +23,12 @@ export default {
   padding: 0 .3rem;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: #fff;
   .search {
     width: 100%;
     height: 0.56rem;
