@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+      // 设置html字体大小自动适配
+      function setHtmlFontSize () {
+        // 设置设计图宽度
+        const designWidth = 750
+        // 获取当前设备可视区域宽度
+        const deviceWidth = document.documentElement.clientWidth
+        // 设置html字体大小
+        document.documentElement.style.fontSize = deviceWidth / designWidth * 100 + 'px'
+      }
+      setHtmlFontSize()
+      // 页面窗口改变，调用该函数
+      window.onresize = function () {
+        setHtmlFontSize()
+      }
+    </script>
   </head>
   <body>
     <noscript>

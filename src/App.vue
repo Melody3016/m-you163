@@ -1,32 +1,108 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img,
+input,
+figure,
+figcaption
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header,footer,section,article,aside,nav,main,hgroup{
+    display:block;
+}
+*{
+    box-sizing: border-box;
+}
+body {
+    font-size: .32rem;
+    font-family: "微软雅黑";
+}
+ul,
+ol,
+li {
+    list-style: none;
 }
 
-#nav {
-  padding: 30px;
+b,
+strong {
+    font-weight: normal;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+em,
+i {
+    font-style: normal;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+a,
+u {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: .32rem;
+    font-weight: normal;
+}
+
+input {
+    outline: none;
+}
+
+img {
+    display: block;
+    border: 0;
+}
+
+fieldset {
+    border: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+/* 封装好类名 */
+.border_none {
+    border: none !important;
+}
+
+.bg_none {
+    background: none !important;
+}
+
+/* 单行文本溢出省略号显示 */
+.text_ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 </style>
