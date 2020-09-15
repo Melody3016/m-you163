@@ -2,11 +2,11 @@
   <div class="header">
     <div class="h-top">
       <h1>网易严选</h1>
-      <div class="search">
+      <div class="search" @click="searchHandle">
         <van-icon name="search" />
         <span>搜索商品, 共37046款好物</span>
       </div>
-      <div class="loginBtn">登录</div>
+      <div class="loginBtn" @click="loginHandle">登录</div>
     </div>
     <div class="h-nav">
       <div class="navs">
@@ -22,6 +22,9 @@
         </div>
         <p @click="clickDown">
           <van-icon :class="toggleRotate?'rotate':''" name="arrow-down" />
+          <van-popup duration="0" :overlay-style="{'top':'0.88rem'}" v-model="toggleRotate" position="top" :style="{ height: '30%' }">
+            <h2>全部频道</h2>
+          </van-popup>
         </p>
       </div>
     </div>
@@ -30,9 +33,10 @@
 
 <script>
 import Vue from 'vue'
-import { Icon } from 'vant'
+import { Icon, Popup } from 'vant'
 import BScroll from 'better-scroll'
 
+Vue.use(Popup)
 Vue.use(Icon)
 export default {
   data () {
@@ -49,6 +53,12 @@ export default {
     },
     clickDown () {
       this.toggleRotate = !this.toggleRotate
+    },
+    searchHandle () {
+      this.$router.push('/search')
+    },
+    loginHandle () {
+      this.$router.push('/login')
     }
   },
   mounted () {
@@ -138,9 +148,19 @@ export default {
         color: #999;
         i {
           transition: all .3s;
+          z-index: 9999;
         }
         .rotate {
           transform: rotate(180deg);
+        }
+        .van-popup--top {
+          top: 0.88rem;
+        }
+        h2 {
+          padding-left: .3rem;
+          font-size: .28rem;
+          color: #333;
+          margin-top: .1rem;
         }
       }
     }
