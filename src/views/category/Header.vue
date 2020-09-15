@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="search">
+    <div class="search" @click="searchHandle">
       <van-icon name="search" />
       <span class="txt">搜索商品, 共37217款好物</span>
     </div>
@@ -13,7 +13,11 @@ import { Icon } from 'vant'
 
 Vue.use(Icon)
 export default {
-
+  methods: {
+    searchHandle () {
+      this.$router.push('/search')
+    }
+  }
 }
 </script>
 

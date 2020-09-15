@@ -2,6 +2,7 @@
   <div class="buying">
     <buy-header>值得买</buy-header>
     <buy-nav />
+    <buy-con />
     <footer-nav />
   </div>
 </template>
@@ -10,12 +11,14 @@
 import FooterNav from '@/components/FooterNav'
 import BuyHeader from '@/components/Header'
 import BuyNav from './Nav'
+import BuyCon from './Content'
 
 export default {
   components: {
     FooterNav,
     BuyHeader,
-    BuyNav
+    BuyNav,
+    BuyCon
   }
 }
 </script>

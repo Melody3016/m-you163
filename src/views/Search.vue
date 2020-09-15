@@ -86,3 +86,34 @@ export default {
   }
 }
 </style>
+<style lang="less">
+  .search {
+    .van-search {
+      padding: 0.2rem 0.24rem;
+      .van-search__content {
+        padding-left: 0.24rem;
+        border-radius: 0.04rem;
+        .van-cell {
+          padding: 0.1rem 0.16rem 0.1rem 0;
+          font-size: 0.28rem;
+          line-height: 0.48rem;
+          .van-field__left-icon {
+            margin-right: 0.08rem;
+            .van-icon {
+              font-size: 0.32rem;
+            }
+          }
+        }
+      }
+      .van-search__action {
+        padding: 0 0.16rem;
+        color: #323233;
+        font-size: 0.28rem;
+        line-height: 0.68rem;
+        cursor: pointer;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+    }
+  }
+</style>

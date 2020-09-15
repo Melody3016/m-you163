@@ -38,7 +38,7 @@
 <script>
 import Swiper from 'swiper'
 import axios from 'axios'
-import 'swiper/swiper-bundle.css'
+import 'swiper/css/swiper.css'
 
 export default {
   data () {
@@ -52,9 +52,11 @@ export default {
         slidesPerView: 4,
         spaceBetween: 5,
         scrollbar: {
-          el: this.$refs.scrollbar
+          el: this.$refs.scrollbar,
+          dragSize: 20
         }
       })
+      this.swiper.scrollbar.$dragEl.css('background', '#DD1A21')
     }
   },
   created () {
@@ -187,6 +189,13 @@ export default {
             }
           }
         }
+      }
+      .swiper-scrollbar {
+        height: 0.03rem;
+        width: 2rem;
+        left: 50%;
+        bottom: .25rem;
+        transform: translateX(-50%);
       }
     }
   }
