@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="#ff734c">
+    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="#fff">
       <van-swipe-item v-for="(item, index) in list" :key="index">
         <van-image :src="item.picUrl + '?type=webp&imageView&quality=75&thumbnail=750x0'" />
       </van-swipe-item>
@@ -46,7 +46,17 @@ export default {
 <style lang="less">
 .banner {
   .van-swipe {
-    transform: translateZ(0)
+    transform: translateZ(0);
+    .van-swipe__indicator {
+      width: 0.4rem;
+      height: 0.04rem;
+      background-color: #fff;
+      opacity: .4;
+      border-radius: 0;
+    }
+    .van-swipe__indicator--active {
+      opacity: 1;
+    }
   }
   .van-image {
     height: 3.7rem;

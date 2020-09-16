@@ -6,7 +6,7 @@
         <van-icon name="search" />
         <span>搜索商品, 共37046款好物</span>
       </div>
-      <div class="loginBtn" @click="loginHandle">登录</div>
+      <div class="loginBtn" @click="loginHandle" v-if="loginState">登录</div>
     </div>
     <div class="h-nav">
       <div class="navs">
@@ -68,6 +68,11 @@ export default {
       this.$router.push('/login')
     }
   },
+  computed: {
+    loginState () {
+      return !(localStorage.getItem('loginInfo') === 'success')
+    }
+  },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper, {
       click: true,
@@ -88,7 +93,7 @@ export default {
   .h-top {
     height: .88rem;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
     padding: .16rem .3rem;
     h1 {
@@ -100,6 +105,8 @@ export default {
       color: #666;
       padding: .08rem .46rem;
       border-radius: 4px;
+      margin-left: .3rem;
+      margin-right: .1rem;
       .van-icon-search {
         font-size: .36rem;
         vertical-align: bottom;

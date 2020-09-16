@@ -100,3 +100,18 @@ export default {
   }
 }
 </style>
+
+<style lang="less">
+.van-swipe {
+  .van-swipe__indicator {
+    width: 0.4rem;
+    height: 0.04rem;
+    background-color: #fff;
+    opacity: .4;
+    border-radius: 0;
+  }
+  .van-swipe__indicator--active {
+    opacity: 1;
+  }
+}
+</style>

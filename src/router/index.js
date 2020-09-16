@@ -27,7 +27,20 @@ const routes = [
   {
     path: '/cart',
     name: 'Cart',
-    component: () => import('../views/cart')
+    redirect: '/cart/home',
+    component: () => import('../views/cart/'),
+    children: [
+      {
+        // 已登录购物车页面
+        path: 'home',
+        component: () => import('../views/cart/Cart.vue')
+      },
+      {
+        // 未登录购物车页面
+        path: 'login',
+        component: () => import('../views/cart/NotLogin.vue')
+      }
+    ]
   },
   {
     path: '/user',
@@ -37,12 +50,25 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login')
+    redirect: '/login/choose',
+    component: () => import('../views/login'),
+    children: [
+      {
+        // 选择登录方式页面
+        path: 'choose',
+        component: () => import('../views/login/Choose')
+      },
+      {
+        // 登录页面
+        path: 'lg',
+        component: () => import('../views/login/Login')
+      }
+    ]
   },
   {
     path: '/search',
     name: 'Search',
-    component: () => import('../views/Search')
+    component: () => import('../views/search')
   },
   {
     path: '*',

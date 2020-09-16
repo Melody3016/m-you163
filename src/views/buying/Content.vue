@@ -72,7 +72,6 @@ export default {
   },
   watch: {
     allData (val) {
-      console.log(val)
       val.forEach(items => {
         // 再遍历item
         items.topics.forEach((item, index) => {

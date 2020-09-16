@@ -84,6 +84,25 @@ export default {
         newArr[i].push(item)
       })
       return newArr
+      /* var newArr = []
+      var oddArr = []
+      var evenArr = []
+      this.swiperData.forEach((item, index) => {
+        if (index % 2 === 0) {
+          evenArr.push(item)
+        } else {
+          oddArr.push(item)
+        }
+        if (evenArr.length === 2) {
+          newArr.push(evenArr)
+          evenArr = []
+        }
+        if (oddArr.length === 2) {
+          newArr.push(oddArr)
+          oddArr = []
+        }
+      })
+      return newArr */
     }
   }
 }

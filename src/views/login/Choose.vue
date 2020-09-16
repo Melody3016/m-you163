@@ -5,11 +5,11 @@
       <img src="https://yanxuan.nosdn.127.net/39c5e4583753d4c3cb868a64c2c109ea.png">
     </div>
     <div class="btns">
-      <van-button type="primary" block color="#DD1A21">
+      <van-button type="primary" block color="#DD1A21" @click="loginHandler">
         <van-icon name="desktop-o" />
         <span>手机号快捷登录</span>
       </van-button>
-      <van-button plain type="primary" block color="#DD1A21">
+      <van-button plain type="primary" block color="#DD1A21" @click="loginHandler">
         <van-icon name="envelop-o" />
         <span>邮箱帐号登录</span>
       </van-button>
@@ -27,6 +27,11 @@ Vue.use(Icon)
 export default {
   components: {
     LoginHeader
+  },
+  methods: {
+    loginHandler () {
+      this.$router.push('/login/lg')
+    }
   }
 }
 </script>
