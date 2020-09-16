@@ -30,7 +30,7 @@ export default {
     clickHandle (index, id) {
       this.activeIndex = index
       // 根据id发送ajax请求
-      axios.get('getData/item/cateList.json?__timestamp=1600138418696', {
+      axios.get('/getData/item/cateList.json?__timestamp=1600138418696', {
         params: {
           categoryId: id
         }
@@ -44,7 +44,7 @@ export default {
     }
   },
   created () {
-    axios.get('getData/item/cateList.json?__timestamp=1600138418696&categoryId=')
+    axios.get('/getData/item/cateList.json?__timestamp=1600138418696&categoryId=')
       .then((res) => {
         this.navList = res.data.data.categoryL1List
         this.contentData = res.data.data

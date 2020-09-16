@@ -42,7 +42,7 @@ export default {
     }
   },
   created () {
-    axios.get('getData/xhr/search/init.json')
+    axios.get('/getData/xhr/search/init.json')
       .then(res => {
         this.list = res.data.data.hotKeywordVOList
       })

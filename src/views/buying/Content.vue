@@ -101,7 +101,7 @@ export default {
           this.finished = true
         }
       }, 1000) */
-      axios.get('getData/topic/v1/find/recAuto.json?size=5&exceptIds=', {
+      axios.get('/getData/topic/v1/find/recAuto.json?size=5&exceptIds=', {
         params: {
           page: this.page++
         }
@@ -119,19 +119,6 @@ export default {
           console.log(err)
         })
     }
-  },
-  created () {
-    axios.get('getData/topic/v1/find/recAuto.json?size=5&exceptIds=', {
-      params: {
-        page: this.page
-      }
-    })
-      .then(res => {
-        this.allData = res.data.data.result
-      })
-      .catch(err => {
-        console.log(err)
-      })
   }
 }
 </script>
