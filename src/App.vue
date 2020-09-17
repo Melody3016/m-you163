@@ -4,6 +4,11 @@
   </div>
 </template>
 
+<script>
+export default {
+}
+</script>
+
 <style lang="less">
 html,
 body,
@@ -104,5 +109,10 @@ textarea {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+body,
+html,
+#app {
+    height: 100%;
 }
 </style>

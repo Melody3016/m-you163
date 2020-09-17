@@ -33,6 +33,7 @@ export default {
   width: 100%;
   z-index: 99;
   background-color: #fff;
+  border-bottom: 1px solid #ccc;
   .search {
     width: 100%;
     height: 0.56rem;

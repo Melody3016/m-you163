@@ -34,6 +34,7 @@ export default {
 <style lang="less">
 .footers {
   .van-tabbar {
+    border-top: 1px solid #ccc;
     height: 0.98rem;
     background-color: #fff;
     .van-tabbar-item__icon {

@@ -68,6 +68,7 @@ export default {
 <style lang="less" scoped>
 .container {
   display: flex;
+  height: 100%;
   .nav-bar {
     width: 1.62rem;
     position: fixed;

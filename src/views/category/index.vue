@@ -24,5 +24,6 @@ export default {
 .category {
   padding-top: .88rem;
   padding-bottom: .98rem;
+  height: 100%;
 }
 </style>
