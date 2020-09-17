@@ -121,7 +121,6 @@ export default {
     .loginBtn {
       width: .72rem;
       height: .38rem;
-      line-height: .38rem;
       text-align: center;
       color: #dd1a21;
       border: 1px solid #dd1a21;
