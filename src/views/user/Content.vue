@@ -31,17 +31,17 @@ export default {
     return {
       userList: [
         { icon: 'orders-o', text: '我的订单' },
-        { icon: 'orders-o', text: '账号管理' },
-        { icon: 'orders-o', text: '周六一起拼' },
-        { icon: 'orders-o', text: '售后服务' },
-        { icon: 'orders-o', text: '邀请返利' },
-        { icon: 'orders-o', text: '优先购' },
-        { icon: 'orders-o', text: '积分中心' },
-        { icon: 'orders-o', text: '会员俱乐部' },
-        { icon: 'orders-o', text: '地址管理' },
-        { icon: 'orders-o', text: '支付安全' },
-        { icon: 'orders-o', text: '帮助与客服' },
-        { icon: 'orders-o', text: '意见反馈' }
+        { icon: 'user-circle-o', text: '账号管理' },
+        { icon: 'calendar-o', text: '周六一起拼' },
+        { icon: 'after-sale', text: '售后服务' },
+        { icon: 'cash-on-deliver', text: '邀请返利' },
+        { icon: 'goods-collect-o', text: '优先购' },
+        { icon: 'gold-coin-o', text: '积分中心' },
+        { icon: 'diamond-o', text: '会员俱乐部' },
+        { icon: 'location-o', text: '地址管理' },
+        { icon: 'certificate', text: '支付安全' },
+        { icon: 'service-o', text: '帮助与客服' },
+        { icon: 'records', text: '意见反馈' }
       ]
     }
   },

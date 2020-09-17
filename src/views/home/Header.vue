@@ -2,7 +2,10 @@
   <div class="header">
     <div class="h-top">
       <h1>网易严选</h1>
-      <div class="search" @click="searchHandle">
+      <div class="search"
+        :class="loginState?'':'login'"
+        @click="searchHandle"
+      >
         <van-icon name="search" />
         <span>搜索商品, 共37046款好物</span>
       </div>
@@ -22,19 +25,19 @@
         </div>
         <p @click="clickDown">
           <van-icon :class="toggleRotate?'rotate':''" name="arrow-down" />
-          <van-popup duration="0" :overlay-style="{'top':'0.88rem'}" v-model="toggleRotate" position="top" :style="{ height: '30%' }">
-            <h2>全部频道</h2>
-            <div class="popup-list">
-              <div class="item"
-                v-for="(item, index) in navs"
-                :key="index"
-                :class="showIndex === index ? 'active' : ''"
-                >{{ item }}</div>
-            </div>
-          </van-popup>
         </p>
       </div>
     </div>
+    <van-popup duration="0" :overlay-style="{'top':'0.89rem'}" v-model="toggleRotate" position="top" :style="{ height: '30%' }">
+      <h2>全部频道</h2>
+      <div class="popup-list">
+        <div class="item"
+          v-for="(item, index) in navs"
+          :key="index"
+          :class="showIndex === index ? 'active' : ''"
+          >{{ item }}</div>
+      </div>
+    </van-popup>
   </div>
 </template>
 
@@ -111,6 +114,9 @@ export default {
         font-size: .36rem;
         vertical-align: bottom;
       }
+      &.login {
+        padding: .08rem .76rem;
+      }
     }
     .loginBtn {
       width: .72rem;
@@ -167,38 +173,38 @@ export default {
         .rotate {
           transform: rotate(180deg);
         }
-        .van-popup--top {
-          top: 0.88rem;
-        }
-        h2 {
-          padding-left: .3rem;
-          font-size: .28rem;
-          color: #333;
-          margin-top: .1rem;
-        }
-        .popup-list {
-          padding: .3rem .3rem 0;
-          display: flex;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          .item {
-            width: 1.48rem;
-            height: .54rem;
-            line-height: .54rem;
-            text-align: center;
-            float: left;
-            margin-bottom: .4rem;
-            background: #fafafa;
-            border: 1px solid #ccc;
-            border-radius: .04rem;
-            font-size: .24rem;
-            color: #333;
-            &.active {
-              border: 1px solid #dd1a21;
-              color: #dd1a21;
-            }
-          }
-        }
+      }
+    }
+  }
+  .van-popup--top {
+    top: 0.88rem;
+  }
+  h2 {
+    padding-left: .3rem;
+    font-size: .28rem;
+    color: #333;
+    margin-top: .1rem;
+  }
+  .popup-list {
+    padding: .3rem .3rem 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .item {
+      width: 1.48rem;
+      height: .54rem;
+      line-height: .54rem;
+      text-align: center;
+      float: left;
+      margin-bottom: .4rem;
+      background: #fafafa;
+      border: 1px solid #ccc;
+      border-radius: .04rem;
+      font-size: .24rem;
+      color: #333;
+      &.active {
+        border: 1px solid #dd1a21;
+        color: #dd1a21;
       }
     }
   }

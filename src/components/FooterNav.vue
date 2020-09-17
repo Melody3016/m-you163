@@ -23,7 +23,7 @@ export default {
         { path: '/home', icon: 'wap-home-o', text: '首页' },
         { path: '/category', icon: 'apps-o', text: '分类' },
         { path: '/buying', icon: 'cash-on-deliver', text: '值得买' },
-        { path: '/cart', icon: 'shopping-cart-o', text: '购物车' },
+        { path: '/cart/home', icon: 'shopping-cart-o', text: '购物车' },
         { path: '/user', icon: 'user-o', text: '个人' }
       ]
     }

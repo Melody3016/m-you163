@@ -16,7 +16,7 @@
             <p>{{ item.title }}</p>
             <div class="item-bot">
               <div class="info">
-                <img :src="item.avatar" alt="">
+                <img :src="item.avatar" alt=""  v-lazy="item.avatar">
                 <span class="name">{{ item.nickname }}</span>
               </div>
               <div class="look">
@@ -35,7 +35,7 @@
             <p>{{ item.title }}</p>
             <div class="item-bot">
               <div class="info">
-                <img :src="item.avatar" alt="">
+                <img :src="item.avatar" alt="" v-lazy="item.avatar">
                 <span class="name">{{ item.nickname }}</span>
               </div>
               <div class="look">
@@ -54,11 +54,12 @@
 
 <script>
 import Vue from 'vue'
-import { List, Icon } from 'vant'
+import { List, Icon, Lazyload } from 'vant'
 import axios from 'axios'
 
 Vue.use(List)
 Vue.use(Icon)
+Vue.use(Lazyload)
 export default {
   data () {
     return {

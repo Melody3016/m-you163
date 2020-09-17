@@ -21,7 +21,7 @@
           v-for="(item, index) in groupItem.categoryList"
           :key="index"
         >
-            <img :src="item.wapBannerUrl" alt="">
+            <img :src="item.wapBannerUrl" alt="" v-lazy="item.wapBannerUrl">
             <div class="txt">{{ item.name }}</div>
           </div>
         </div>
@@ -32,10 +32,11 @@
 
 <script>
 import Vue from 'vue'
-import { Swipe, SwipeItem } from 'vant'
+import { Swipe, SwipeItem, Lazyload } from 'vant'
 
 Vue.use(Swipe)
 Vue.use(SwipeItem)
+Vue.use(Lazyload)
 export default {
   data () {
     return {
@@ -103,6 +104,7 @@ export default {
 
 <style lang="less">
 .van-swipe {
+  transform: translateZ(0);
   .van-swipe__indicator {
     width: 0.4rem;
     height: 0.04rem;

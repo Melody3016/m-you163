@@ -22,7 +22,7 @@
                   :class="item.tag !== '' ? 'bg' : ''"
                 >{{ item.tag }}</div>
               </div>
-              <img :src="item.showPicUrl">
+              <img :src="item.showPicUrl" v-lazy="item.showPicUrl">
               <div class="discount">
                 <div class="line1">{{ item.activityPrice }}</div>
                 <div class="line2">{{ item.originPrice }}</div>
@@ -43,7 +43,7 @@
               v-for="(item, index) in categoryList.slice(0,2)" :key="index"
             >
               <div class="txt">{{ item.categoryName }}</div>
-              <img :src="item.showPicUrl" alt="">
+              <img :src="item.showPicUrl" alt="" v-lazy="item.showPicUrl">
             </div>
           </div>
           <div class="line2">
@@ -51,7 +51,7 @@
               v-for="(item, index) in categoryList.slice(2)" :key="index"
             >
               <div class="txt">{{ item.categoryName }}</div>
-              <img :src="item.showPicUrl" alt="">
+              <img :src="item.showPicUrl" alt="" v-lazy="item.showPicUrl">
             </div>
           </div>
         </div>
@@ -69,6 +69,10 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import { Lazyload } from 'vant'
+
+Vue.use(Lazyload)
 export default {
   data () {
     return {

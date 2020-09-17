@@ -22,7 +22,7 @@
           v-for="(item, index) in itemList"
           :key="index"
         >
-          <img :src="item.picUrl" alt="">
+          <img :src="item.picUrl" alt="" v-lazy="item.picUrl">
           <span>{{ item.text }}</span>
         </div>
       </div>
@@ -37,7 +37,7 @@
           v-for="(item, index) in floorBottom"
           :key="index"
         >
-          <img :src="item.picUrl" alt="">
+          <img :src="item.picUrl" alt="" v-lazy="item.picUrl">
         </a>
       </div>
     </div>
@@ -45,6 +45,10 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import { Lazyload } from 'vant'
+
+Vue.use(Lazyload)
 export default {
   data () {
     return {
