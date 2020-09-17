@@ -45,13 +45,11 @@ export default {
   },
   methods: {
     onSubmit (values) {
-      console.log('submit', values)
       // 提示信息
       Toast.loading({
         message: '登录中...',
         forbidClick: true,
         onClose: () => {
-          console.log(111)
           // 添加登录信息
           localStorage.setItem('loginInfo', 'success')
           this.$router.push('/home')
