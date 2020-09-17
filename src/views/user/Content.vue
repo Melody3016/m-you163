@@ -74,7 +74,7 @@ export default {
     text-align: center;
     font-size: .28rem;
     background-color: #fff;
-    margin-bottom: .2rem;
+    margin-bottom: 0.2rem;
   }
 }
 </style>
@@ -88,5 +88,8 @@ export default {
     font-size: .24rem;
     color: #333;
   }
+}
+.van-dialog__message {
+  font-size: 0.36rem;
 }
 </style>

@@ -15,7 +15,10 @@ import HomeBanner from './Swiper'
 import HomeClassify from './Classify'
 import HomeContent from './Content'
 import axios from 'axios'
+import Vue from 'vue'
+import { Icon } from 'vant'
 
+Vue.use(Icon)
 export default {
   components: {
     FooterNav,
@@ -45,5 +48,22 @@ export default {
 .home {
   padding: 1.48rem 0 .98rem 0;
   background-color: #eee;
+  .backTop {
+    position: fixed;
+    opacity: .8;
+    width: 0.82rem;
+    height: 0.82rem;
+    border-radius: 50%;
+    right: 0.43rem;
+    bottom: 1.2rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .van-icon-arrow-up {
+      font-size: .4rem;
+      color: #333;
+    }
+  }
 }
 </style>
